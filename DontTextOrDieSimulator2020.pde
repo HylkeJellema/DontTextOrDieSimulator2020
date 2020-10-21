@@ -1,4 +1,4 @@
-/* Hylke Jellema S......
+/* Hylke Jellema S2192098
  Hans Nielen S2336693
  Final Project: DontTextOrDieSimulator2020
  Based on a don't text or die PSA.
