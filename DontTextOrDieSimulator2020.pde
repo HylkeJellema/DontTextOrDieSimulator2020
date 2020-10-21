@@ -6,6 +6,8 @@
  Based on this decision your experience will change.
  */
 
+import processing.sound.*;
+
 boolean start;  // boolean for startscreen
 boolean doText; //general boolean for text and drive
 boolean dontText; //general boolean for just drive
@@ -15,6 +17,8 @@ float yMouse;
 float xCoor;
 float yCoor;
 Display scrn;
+SoundFile vib;
+Phone phone;
 
 void setup() {
   start = true;
@@ -25,6 +29,8 @@ void setup() {
   xCoor = width/2;
   yCoor = height/2;
   scrn = new Display();
+  phone = new Phone(0,0);
+  vib = new SoundFile(this, "sound/vib.mp3");
 }
 
 void draw() {
