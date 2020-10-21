@@ -28,7 +28,7 @@ class Start {
     if (safe) {
       rect(xCoor, yCoor+15, 200, 330); //shows box above all text if mouse is above dont
       if(pressed){
-       Text = true; 
+       doText = true; 
        start = false;
        background(255,255,255);
       }
@@ -36,7 +36,7 @@ class Start {
     if (unsafe) {  //shows box above 
       rect(xCoor, yCoor+60, 200, 250);
       if(pressed){
-        dont = true;
+        dontText = true;
         start = false;
         background(255,255,255);
       }

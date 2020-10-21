@@ -7,8 +7,8 @@
  */
 
 boolean start;  // boolean for startscreen
-boolean Text; //general boolean for text and drive
-boolean dont; //general boolean for just drive
+boolean doText; //general boolean for text and drive
+boolean dontText; //general boolean for just drive
 float size;
 float xMouse;
 float yMouse;
@@ -18,8 +18,8 @@ Display scrn;
 
 void setup() {
   start = true;
-  Text = false;
-  dont = false;
+  doText = false;
+  dontText = false;
   size = 1;
   size(1000, 600);
   xCoor = width/2;
