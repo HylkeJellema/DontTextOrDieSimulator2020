@@ -14,8 +14,6 @@ import processing.sound.*;
 
 boolean withText; //general boolean for text and drive
 boolean pressedMouse;
-boolean left, right;
-float size;
 float xMouse;
 float yMouse;
 float xCoor;
@@ -29,7 +27,6 @@ Drive drivescrn;
 void setup() {
   stage=1;
   withText = false;
-  size = 1;
   size(1000, 600);
   xCoor = width/2;
   yCoor = height/2;
