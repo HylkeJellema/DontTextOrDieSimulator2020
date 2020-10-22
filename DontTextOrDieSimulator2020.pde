@@ -1,3 +1,7 @@
+import processing.video.*;
+
+import processing.video.*;
+
 /* Hylke Jellema S2192098
  Hans Nielen S2336693
  Final Project: DontTextOrDieSimulator2020
@@ -8,8 +12,9 @@
 
 import processing.sound.*;
 
-
-boolean withText, pressedMouse; //general boolean text and drive
+boolean start;  // boolean for startscreen
+boolean doText; //general boolean for text and drive
+boolean dontText; //general boolean for just drive
 float size;
 float xMouse;
 float yMouse;
@@ -47,3 +52,19 @@ void draw() {
     drivescrn.display();
   }
 }
+
+void keyPressed() {
+  if (key == 'a') {
+    left =true;
+    right =false;
+  }
+  if (key == 'd') {
+    right =true;
+    left =false;
+  }
+}
+
+  void keyReleased() {
+    right = false;
+    left = false;
+  }

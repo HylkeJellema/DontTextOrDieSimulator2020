@@ -31,7 +31,7 @@ class Drive {
     background(grassColor);
     fill(skyColor);
     rectMode(CORNER);
-    rect(0, 0, 2*(xCoor), yCoor);
+    rect(0, 0, 1000, yCoor);
     fill(roadColor);
     quad(xCoor+20, yCoor, xCoor-20, yCoor, 
       xCoor-500, 2*(yCoor), xCoor+500, 2*(yCoor));
@@ -52,19 +52,25 @@ class Drive {
         lengt = 3;
         a = 2;
       }
-    }
-    
+    }    
     counter++;
     fill(interiorColor);
-    rect(0, 0, (2*xCoor), 20);
-    quad(xCoor-400, yCoor-280, xCoor-300, yCoor+150, 
-      xCoor-340, yCoor+150, xCoor-510, yCoor-280);
-    quad(xCoor+400, yCoor-280, xCoor+300, yCoor+150, 
-      xCoor+340, yCoor+150, xCoor+510, yCoor-280);
-    quad(xCoor+340, yCoor+150, xCoor+500, yCoor+180, xCoor-500, yCoor+180, 
-      xCoor-340, yCoor+150);
-    rect(0, yCoor+180, (2*xCoor), 120);
+    rect(0, 0, 1000, 20);
+    quad(100, 20, 200, 450, 160, 450, -10, 20);
+    quad(900, 20, 800, 450, 840, 450, 1010, 20);
+    quad(840, 450, 1000, 480, 0, 480, 160, 450);
+    rect(0, 480, 1000, 120);
       phone.display();
       phone.ring();
+  }
+  void updateScrn(){
+    if(right){
+      xCoor--;
+      x--;
+    }
+    if(left){
+      xCoor++;
+      x++;
+    }
   }
 }
