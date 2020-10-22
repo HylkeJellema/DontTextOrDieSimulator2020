@@ -63,6 +63,5 @@ void keyPressed() {
 }
 
 void keyReleased() {
-  right = false;
-  left = false;
+  drivescrn.straight();
 }

@@ -1,4 +1,5 @@
 class Drive {
+  boolean left, right;
   color interiorColor;
   color skyColor;
   color roadColor;
@@ -60,15 +61,31 @@ class Drive {
     quad(900, 20, 800, 450, 840, 450, 1010, 20);
     quad(840, 450, 1000, 480, 0, 480, 160, 450);
     rect(0, 480, 1000, 120);
+    steering();
     phone.display();
     phone.ring();
   }
   void right() {
-    xCoor--;
-    x--;
+    left = false;
+    right = true;
   }
   void left() {
-    xCoor++;
-    x++;
+    left = true;
+    right = false;
+  }
+  void straight() {
+    left = false;
+    right = false;
+  }
+  void steering() {
+    if (left) {
+      xCoor=xCoor+2;
+      x=x+2;
+    } else {
+      if (right) {
+        xCoor=xCoor-2;
+        x=x-2;
+      }
+    }
   }
 }
