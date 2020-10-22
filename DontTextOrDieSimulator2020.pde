@@ -12,9 +12,9 @@ import processing.video.*;
 
 import processing.sound.*;
 
-boolean start;  // boolean for startscreen
-boolean doText; //general boolean for text and drive
-boolean dontText; //general boolean for just drive
+boolean withText; //general boolean for text and drive
+boolean pressedMouse;
+boolean left, right;
 float size;
 float xMouse;
 float yMouse;
@@ -43,11 +43,11 @@ void draw() {
   xMouse = mouseX;
   yMouse = mouseY;  
   pressedMouse = mousePressed;  //display function
-  
+
   if (stage==1) { //start screen
     startscrn.display();
   }
-  
+
   if (stage==2) { //game
     drivescrn.display();
   }
@@ -55,16 +55,14 @@ void draw() {
 
 void keyPressed() {
   if (key == 'a') {
-    left =true;
-    right =false;
+    drivescrn.left();
   }
   if (key == 'd') {
-    right =true;
-    left =false;
+    drivescrn.right();
   }
 }
 
-  void keyReleased() {
-    right = false;
-    left = false;
-  }
+void keyReleased() {
+  right = false;
+  left = false;
+}

@@ -38,14 +38,14 @@ class Drive {
     fill(stripesColor);
     rect(x, y, widt, lengt);
     if (counter%2==0) {
-      if(counter%8==0){
-      widt= widt +2;
-      x--;      
+      if (counter%8==0) {
+        widt= widt +2;
+        x--;
       }
       lengt= lengt+2;
       a = a*1.1;
       y = y +a ;
-      if(y>=yCoor+150){
+      if (y>=yCoor+150) {
         y=yCoor;
         x=xCoor;
         widt = 1;
@@ -60,17 +60,15 @@ class Drive {
     quad(900, 20, 800, 450, 840, 450, 1010, 20);
     quad(840, 450, 1000, 480, 0, 480, 160, 450);
     rect(0, 480, 1000, 120);
-      phone.display();
-      phone.ring();
+    phone.display();
+    phone.ring();
   }
-  void updateScrn(){
-    if(right){
-      xCoor--;
-      x--;
-    }
-    if(left){
-      xCoor++;
-      x++;
-    }
+  void right() {
+    xCoor--;
+    x--;
+  }
+  void left() {
+    xCoor++;
+    x++;
   }
 }
