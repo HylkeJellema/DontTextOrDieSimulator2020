@@ -5,8 +5,23 @@ class Wheel {
   Wheel() { 
     wheel = loadImage("steering.png"); 
   } 
-  void display() { 
-    rectMode(CENTER); 
-    image(wheel, xCoor-300, yCoor+100); 
-  } 
+  void straight() { 
+    image(wheel, 200, 400); 
+  }
+  void left() {
+    pushMatrix();
+    imageMode(CENTER);
+    rotate(PI/2);
+    image(wheel, 200, 400);
+    imageMode(CORNER);
+    popMatrix();
+  }
+  void right() {
+    pushMatrix();
+    imageMode(CENTER);    
+    rotate(-(PI/2));
+    image(wheel, 200, 400);
+    imageMode(CORNER);    
+    popMatrix();
+  }
 } 

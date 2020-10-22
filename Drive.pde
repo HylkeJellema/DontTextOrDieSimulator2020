@@ -68,7 +68,6 @@ class Drive {
       phone.display();
       phone.ring();
     }
-    wheel.display();
   }
   void right() {
     left = false;
@@ -84,13 +83,18 @@ class Drive {
   }
   void steering() {
     if (left) {
+      wheel.left();      
       xCoor=xCoor+2;
       x=x+2;
     } else {
       if (right) {
+        wheel.right();      
         xCoor=xCoor-2;
         x=x-2;
       }
+    } 
+    if (!left && !right) {
+      wheel.straight();
     }
   }
 }
