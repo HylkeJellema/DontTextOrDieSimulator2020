@@ -26,9 +26,9 @@ class Display {
           startscrn.updateScrn(hoverSafe, hoverUnsafe, pressed);  //update screen
         }
       }
-    }
-   else{
-    drivescrn.displayScrn(); //display driving screen after an option has been selected
-   }
+    } else {
+      drivescrn.displayScrn(); //display driving screen after an option has been selected
+      drivescrn.updateScrn();
+  }
   }
 }
