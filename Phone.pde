@@ -24,9 +24,9 @@ class Phone {
 
   void display() {
     if (hans) {
-      image(phoneHans[0], x, y,200,400);
+      image(phoneHans[0], x, y, 200, 400);
     } else {
-      image(phoneHylke[0], x, y,200,400);
+      image(phoneHylke[0], x, y, 200, 400);
     }
   }
   void ring() {                 //used for only ring sound if you dont want phone to show
