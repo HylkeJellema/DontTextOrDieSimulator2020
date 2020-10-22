@@ -26,7 +26,7 @@ class Drive {
     y = yCoor;
   }
 
-  void display() {
+  void displayScrn() {
     noStroke();
     background(grassColor);
     fill(skyColor);

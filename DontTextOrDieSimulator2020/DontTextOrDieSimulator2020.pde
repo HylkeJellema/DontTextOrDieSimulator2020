@@ -8,42 +8,31 @@
 
 import processing.sound.*;
 
-
-boolean withText, pressedMouse; //general boolean text and drive
+boolean start;  // boolean for startscreen
+boolean doText; //general boolean text and drive
 float size;
 float xMouse;
 float yMouse;
 float xCoor;
 float yCoor;
-int stage;
+Display scrn;
 SoundFile vib;
 Phone phone;
-Start startscrn;
-Drive drivescrn;
 
 void setup() {
-  stage=1;
-  withText = false;
+  start = true;
+  doText = false;
   size = 1;
   size(1000, 600);
   xCoor = width/2;
   yCoor = height/2;
-  phone = new Phone(0, 0);
+  scrn = new Display();
+  phone = new Phone(0,0);
   vib = new SoundFile(this, "vib.mp3");
-  startscrn = new Start();
-  drivescrn = new Drive();
 }
 
 void draw() {
   xMouse = mouseX;
   yMouse = mouseY;  
-  pressedMouse = mousePressed;  //display function
-  
-  if (stage==1) { //start screen
-    startscrn.display();
-  }
-  
-  if (stage==2) { //game
-    drivescrn.display();
-  }
+  scrn.showDisplay(mousePressed);  //display function
 }
