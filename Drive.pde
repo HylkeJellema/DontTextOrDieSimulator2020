@@ -62,8 +62,10 @@ class Drive {
     quad(840, 450, 1000, 480, 0, 480, 160, 450);
     rect(0, 480, 1000, 120);
     steering();
-    phone.display();
-    phone.ring();
+    if (withText) {
+      phone.display();
+      phone.ring();
+    }
   }
   void right() {
     left = false;
