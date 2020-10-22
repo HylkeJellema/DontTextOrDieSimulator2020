@@ -1,5 +1,4 @@
 class Drive {
-  boolean left, right;
   color interiorColor;
   color skyColor;
   color roadColor;
@@ -27,26 +26,26 @@ class Drive {
     y = yCoor;
   }
 
-  void display() {
+  void displayScrn() {
     noStroke();
     background(grassColor);
     fill(skyColor);
     rectMode(CORNER);
     rect(0, 0, 1000, yCoor);
     fill(roadColor);
-    quad(xCoor+275, yCoor, xCoor-275, yCoor, 
-      xCoor-500, 2*(yCoor), xCoor+500, 2*(yCoor));
+    quad(xCoor+80, yCoor, xCoor-80, yCoor, 
+      xCoor-600, 2*(yCoor), xCoor+600, 2*(yCoor));
     fill(stripesColor);
     rect(x, y, widt, lengt);
     if (counter%2==0) {
-      if (counter%8==0) {
-        widt= widt +2;
-        x--;
+      if(counter%8==0){
+      widt= widt +2;
+      x--;      
       }
       lengt= lengt+2;
       a = a*1.1;
       y = y +a ;
-      if (y>=yCoor+150) {
+      if(y>=yCoor+150){
         y=yCoor;
         x=xCoor;
         widt = 1;
@@ -61,31 +60,15 @@ class Drive {
     quad(900, 20, 800, 450, 840, 450, 1010, 20);
     quad(840, 450, 1000, 480, 0, 480, 160, 450);
     rect(0, 480, 1000, 120);
-    steering();
-    phone.display();
-    phone.ring();
   }
-  void right() {
-    left = false;
-    right = true;
-  }
-  void left() {
-    left = true;
-    right = false;
-  }
-  void straight() {
-    left = false;
-    right = false;
-  }
-  void steering() {
-    if (left) {
-      xCoor=xCoor+2;
-      x=x+2;
-    } else {
-      if (right) {
-        xCoor=xCoor-2;
-        x=x-2;
-      }
+  void updateScrn(){
+    if(right){
+      xCoor--;
+      x--;
+    }
+    if(left){
+      xCoor++;
+      x++;
     }
   }
 }
