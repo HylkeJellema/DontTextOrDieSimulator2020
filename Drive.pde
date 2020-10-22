@@ -12,6 +12,7 @@ class Drive {
   float widt;
   float x;
   float y;
+  Wheel wheel;
 
   Drive() {
     interiorColor = color(150, 75, 0);
@@ -25,6 +26,7 @@ class Drive {
     widt=1;
     x = xCoor;
     y = yCoor;
+    wheel = new Wheel();
   }
 
   void display() {
@@ -66,6 +68,7 @@ class Drive {
       phone.display();
       phone.ring();
     }
+    wheel.display();
   }
   void right() {
     left = false;
