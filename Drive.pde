@@ -56,7 +56,9 @@ class Drive {
       imageMode(CENTER);
       image(dad, 525, 400, xpand, ypand);
       imageMode(CORNER);
-      crashSound.play();
+      if (!crashSound.isPlaying()) {     //checks if sound is already playing
+        crashSound.play();               //plays sound if not already
+      }
       if (xpand >1100) {
         stage = 3;
       }
