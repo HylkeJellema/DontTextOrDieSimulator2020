@@ -1,5 +1,6 @@
 class Drive {
   boolean left, right;
+  boolean showDad;
   color interiorColor;
   color skyColor;
   color roadColor;
@@ -10,6 +11,8 @@ class Drive {
   PImage dad;
   Tree tree;
   Stripes stripe;
+  float xpand=237;
+  float ypand=496;
 
   Drive() {
     interiorColor = color(150, 75, 0);
@@ -28,13 +31,12 @@ class Drive {
     background(grassColor);
 
     rectMode(CORNER);
-    image(background,0,0);
+    image(background, 0, 0);
     fill(roadColor);
     quad(xCoor+275, yCoor, xCoor-275, yCoor, 
       xCoor-500, 2*(yCoor), xCoor+500, 2*(yCoor));
     stripe.display();  
-    dad.resize(400, 550);
-    //image(dad, xCoor-100, yCoor-300);
+    dad();
     tree.display();
     fill(interiorColor);
     rect(0, 0, 1000, 20);
@@ -47,6 +49,21 @@ class Drive {
       phone.display();
       phone.ring();
     }
+  }
+  void dad() {
+    if (showDad) {
+      xpand= xpand *1.03;
+      ypand= ypand  *1.03;
+      imageMode(CENTER);
+      image(dad, 525, 400, xpand, ypand);
+      imageMode(CORNER);
+      if (xpand >1100) {
+        stage = 3;
+      }
+    }
+  }
+  void spawnDad() {
+    showDad=true;
   }
   void right() {
     left = false;
@@ -65,13 +82,11 @@ class Drive {
       wheel.left();      
       xCoor=xCoor+2;
       stripe.left();
-      
     } else {
       if (right) {
         wheel.right();      
         xCoor=xCoor-2;
         stripe.right();
-        
       }
     } 
     if (!left && !right) {

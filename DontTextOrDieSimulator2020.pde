@@ -31,7 +31,7 @@ void setup() {
   size(1000, 600);
   xCoor = width/2;
   yCoor = height/2;
-  phone = new Phone(0, 0);
+  phone = new Phone(350, 800);
   vib = new SoundFile(this, "vib.mp3");
   startscrn = new Start();
   drivescrn = new Drive();
