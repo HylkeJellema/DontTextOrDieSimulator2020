@@ -13,6 +13,7 @@ class Drive {
   float x;
   float y;
   Wheel wheel;
+  PImage background;
 
   Drive() {
     interiorColor = color(150, 75, 0);
@@ -20,6 +21,7 @@ class Drive {
     skyColor = color(42, 26, 71);
     roadColor = color(37, 37, 37);
     stripesColor = color(250, 250, 250);
+    background = loadImage("background.png");
     counter = 0;
     a = 2;
     lengt=3;
@@ -32,9 +34,9 @@ class Drive {
   void display() {
     noStroke();
     background(grassColor);
-    fill(skyColor);
+
     rectMode(CORNER);
-    rect(0, 0, 1000, yCoor);
+    image(background,0,0);
     fill(roadColor);
     quad(xCoor+275, yCoor, xCoor-275, yCoor, 
       xCoor-500, 2*(yCoor), xCoor+500, 2*(yCoor));
