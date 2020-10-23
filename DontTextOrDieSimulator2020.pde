@@ -24,6 +24,7 @@ Phone phone;
 Start startscrn;
 Drive drivescrn;
 PImage stage3;
+PImage dad;
 int counter;
 
 void setup() {
@@ -36,6 +37,7 @@ void setup() {
   vib = new SoundFile(this, "vib.mp3");
   crashSound = new SoundFile(this, "car.mp3");
   stage3= loadImage("stage3.png");
+  dad = loadImage("dad.png");
   startscrn = new Start();
   drivescrn = new Drive();
 }
@@ -56,8 +58,13 @@ void draw() {
     counter++;
     if (counter<100) {
       background(0);
-    } else {
+    } 
+    if (counter>=100&&counter<500) {
       image(stage3, 0, 0);
+    }
+    if (counter>=500&&counter<1000) {
+      background(0);
+      image(dad, 50, 0);
     }
   }
 }

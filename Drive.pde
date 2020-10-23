@@ -7,7 +7,6 @@ class Drive {
   color wheelColor;
   color grassColor;
   PImage background;    //initiate images
-  PImage dad;
   Tree tree;            //initiate objects
   Stripes stripe;
   float xpand=237;
@@ -20,7 +19,6 @@ class Drive {
     skyColor = color(42, 26, 71);
     roadColor = color(37, 37, 37);
     background = loadImage("background.png"); //set images
-    dad = loadImage("dad.png");
     wheel = new Wheel();  //set objects
     tree = new Tree();
     stripe = new Stripes();
