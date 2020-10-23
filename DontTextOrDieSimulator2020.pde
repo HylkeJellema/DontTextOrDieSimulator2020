@@ -32,7 +32,7 @@ void setup() {
   yCoor = height/2;
   phone = new Phone(350, 800);
   vib = new SoundFile(this, "vib.mp3");
-  crashSound = new SoundFile(this, "car.wav");
+  crashSound = new SoundFile(this, "car.mp3");
   startscrn = new Start();
   drivescrn = new Drive();
 }
