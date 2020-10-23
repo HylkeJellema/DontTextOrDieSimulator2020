@@ -51,22 +51,22 @@ void draw() {
   yMouse = mouseY;  
   pressedMouse = mousePressed;  //display function
 
-  if (stage==1) { //start screen
+  if (stage==1) { //start screen stage
     startscrn.display();
   }
 
-  if (stage==2) { //game
+  if (stage==2) { //game stage
     drivescrn.display();
   }
-  if (stage==3) {
+  if (stage==3) { //end screen
     counter++;
-    if (counter<100) {
+    if (counter<100) { //black screen first
       background(0);
     } 
-    if (counter>=100&&counter<500) {
+    if (counter>=100&&counter<500) { //then lives left
       image(stage3, 0, 0);
     }
-    if (counter>=500&&counter<1000) {
+    if (counter>=500&&counter<1000) { //then family with dad disapearing
       background(0);
       image(family, 250,0);
       tint(255, opacity);
@@ -77,7 +77,7 @@ void draw() {
   }
 }
 
-void keyPressed() {
+void keyPressed() { //to move the car left and right
   if (key == 'a') {
     drivescrn.left();
   }
@@ -86,6 +86,6 @@ void keyPressed() {
   }
 }
 
-void keyReleased() {
+void keyReleased() { //reset direction boolean in drive class
   drivescrn.straight();
 }
