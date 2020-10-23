@@ -18,7 +18,7 @@ class Start {
     textAlign(CENTER);
     fill(textColor);
     rectMode(CENTER);
-    text("DON'T", xCoor, yCoor-80);
+    text("DON'T", xCoor, yCoor-80); //draw dont text and drive
     text("TEXT", xCoor, yCoor);
     text("AND", xCoor, yCoor+80);
     text("DRIVE", xCoor, yCoor+ 160);
@@ -41,16 +41,18 @@ class Start {
     fill(boxColor);
     if (safe) {
       rect(xCoor, yCoor+15, 200, 330); //shows box above all text if mouse is above dont
-      if (pressed) {
+      if (pressed) { //start stage 2 if clicked
         withText = false; 
         stage = 2;
+        timerStart = millis();//create timestamd start stage 2
       }
     }
     if (unsafe) {  //shows box above 
-      rect(xCoor, yCoor+60, 200, 250);
-      if (pressed) {
+      rect(xCoor, yCoor+60, 200, 250); //shows box above text and drive if mouse is above
+      if (pressed) { //start stage 2 if clicked
         withText = true;
         stage = 2;
+        timerStart = millis(); //creates timestamp start stage 2
       }
     }
   }

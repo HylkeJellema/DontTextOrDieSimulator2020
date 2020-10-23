@@ -19,6 +19,7 @@ float yMouse;
 float xCoor;
 float yCoor;
 int stage;
+int timerStart;
 SoundFile vib;
 Phone phone;
 Start startscrn;

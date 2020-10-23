@@ -34,10 +34,8 @@ class Tree {
     rect(x+(2*trunkWidth), y+(trunkHeight/2), trunkWidth, trunkHeight);
     rectMode(CORNER);
     if (counter%2==0) {
-      if (counter%4==0) {
-        leaveWidth= leaveWidth +8;
+        leaveWidth= leaveWidth +4;
         x = x + 2*speedHori;
-      }
       leaveHeight= leaveHeight+8;
       speedVert = speedVert*1.1;
       speedHori = speedHori*1.1;
@@ -52,7 +50,7 @@ class Tree {
           x=xCoor+320;
           speedHori = 1;
         }else if(rando==1){
-          x=xCoor-320-leaveWidth;
+          x=xCoor-330-leaveWidth;
           speedHori = -1;
         }
         

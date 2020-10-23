@@ -5,32 +5,22 @@ class Drive {
   color roadColor;
   color wheelColor;
   color grassColor;
-  color stripesColor;
-  int counter;
-  float a;
-  float lengt;
-  float widt;
-  float x;
-  float y;
   Wheel wheel;
   PImage background;
+  PImage dad;
   Tree tree;
+  Stripes stripe;
 
   Drive() {
     interiorColor = color(150, 75, 0);
     grassColor = color(0, 60, 20);
     skyColor = color(42, 26, 71);
     roadColor = color(37, 37, 37);
-    stripesColor = color(250, 250, 250);
     background = loadImage("background.png");
-    counter = 0;
-    a = 2;
-    lengt=3;
-    widt=1;
-    x = xCoor;
-    y = yCoor;
+    dad = loadImage("dad.png");
     wheel = new Wheel();
     tree = new Tree();
+    stripe = new Stripes();
   }
 
   void display() {
@@ -42,25 +32,9 @@ class Drive {
     fill(roadColor);
     quad(xCoor+275, yCoor, xCoor-275, yCoor, 
       xCoor-500, 2*(yCoor), xCoor+500, 2*(yCoor));
-    fill(stripesColor);
-    rect(x, y, widt, lengt);
-    if (counter%2==0) {
-      if (counter%8==0) {
-        widt= widt +2;
-        x--;
-      }
-      lengt= lengt+2;
-      a = a*1.1;
-      y = y +a ;
-      if (y>=yCoor+150) {
-        y=yCoor;
-        x=xCoor;
-        widt = 1;
-        lengt = 3;
-        a = 2;
-      }
-    }    
-    counter++;
+    stripe.display();  
+    dad.resize(400, 550);
+    //image(dad, xCoor-100, yCoor-300);
     tree.display();
     fill(interiorColor);
     rect(0, 0, 1000, 20);
@@ -69,7 +43,7 @@ class Drive {
     quad(840, 450, 1000, 480, 0, 480, 160, 450);
     rect(0, 480, 1000, 120);
     steering();
-    if (withText) {
+    if (withText /*&& (millis()-timerStart>=5000)*/) {
       phone.display();
       phone.ring();
     }
@@ -90,12 +64,14 @@ class Drive {
     if (left) {
       wheel.left();      
       xCoor=xCoor+2;
-      x=x+2;
+      stripe.left();
+      
     } else {
       if (right) {
         wheel.right();      
         xCoor=xCoor-2;
-        x=x-2;
+        stripe.right();
+        
       }
     } 
     if (!left && !right) {
