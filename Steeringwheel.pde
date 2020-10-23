@@ -1,36 +1,34 @@
 class Wheel { 
 
-  PImage wheel; 
+  PImage wheel; //initiate image and variables
   int x, y;
 
   Wheel() { 
-    wheel = loadImage("steering.png"); 
+    wheel = loadImage("steering.png"); //load image and set local coordinates
     x=300;
     y=520;
   } 
-  void straight() { 
-    pushMatrix();
-    imageMode(CENTER);
-    image(wheel, x, y); 
-    imageMode(CORNER);
-    popMatrix();
+  void straight() { //function for normal steering wheel
+    imageMode(CENTER); //change imageMode for placing wheel
+    image(wheel, x, y); //draw steering wheel
+    imageMode(CORNER); //reset for other parts of program
   }
   void left() {
-    pushMatrix();
-    imageMode(CENTER);
-    translate(x,y);
-    rotate(radians(-20));
-    image(wheel, 0, 0);
-    imageMode(CORNER);
-    popMatrix();
+    pushMatrix();  //push matrix so steering wheel is isolated
+    imageMode(CENTER);//change imageMode for placing wheel
+    translate(x,y); //translate so rotate happens in center of the steering wheel
+    rotate(radians(-20)); //rotate matrix
+    image(wheel, 0, 0);  //draw steering wheel
+    imageMode(CORNER); //reset for other parts of program
+    popMatrix(); //pop matrix so only steering wheel is turned
   }
   void right() {
-    pushMatrix();
-    imageMode(CENTER);    
-    translate(x,y);
-    rotate(radians(20));
-    image(wheel, 0, 0);
-    imageMode(CORNER);    
-    popMatrix();
+    pushMatrix();  //push matrix so steering wheel is isolated
+    imageMode(CENTER);  //change imageMode for placing wheel  
+    translate(x,y);  //translate so rotate happens in center of the steering wheel
+    rotate(radians(20)); //rotate matrix
+    image(wheel, 0, 0);  //draw steering wheel
+    imageMode(CORNER); //reset for other parts of program   
+    popMatrix(); //pop matrix so only steering wheel is turned
   }
 } 
