@@ -12,6 +12,7 @@ class Drive {
   Stripes stripe;
   float xpand=237;
   float ypand=496;
+  Wheel wheel;
 
   Drive() {
     interiorColor = color(150, 75, 0);  //set colors
@@ -31,9 +32,9 @@ class Drive {
     rectMode(CORNER);
     image(background, 0, 0);  //draw background image
     fill(roadColor);
+    quad(xCoor+275, yCoor, xCoor-275, yCoor, //draw road
+      xCoor-500, 2*(yCoor), xCoor+500, 2*(yCoor));
     tree.display();                   //call object for moving trees
-    quad(xCoor+275, yCoor, xCoor-275, yCoor,   //draw road
-    xCoor-500, 2*(yCoor), xCoor+500, 2*(yCoor));
     stripe.display();                 //call object for moving stripes
     dad();
     fill(interiorColor);
@@ -55,6 +56,7 @@ class Drive {
       imageMode(CENTER);
       image(dad, 525, 400, xpand, ypand);
       imageMode(CORNER);
+      crashSound.play();
       if (xpand >1100) {
         stage = 3;
       }
@@ -88,7 +90,7 @@ class Drive {
       }
     } 
     if (!left && !right) {  
-      wheel.straight();                                //function for normal steering wheel                                                        
+      wheel.straight();                                //function for normal steering wheel
     }
   }
 }

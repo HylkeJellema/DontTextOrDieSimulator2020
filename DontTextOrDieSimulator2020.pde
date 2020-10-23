@@ -1,16 +1,14 @@
-import processing.video.*;
-
-import processing.video.*;
-
 /* Hylke Jellema S2192098
  Hans Nielen S2336693
  Final Project: DontTextOrDieSimulator2020
  Based on a don't text or die PSA.
  You'll get the choice to either text and drive or don't text and drive.
  Based on this decision your experience will change.
+ sounds by freesfx.co.uk
  */
 
 import processing.sound.*;
+import processing.video.*;
 
 boolean withText; //general boolean for text and drive
 boolean pressedMouse;
@@ -21,6 +19,7 @@ float yCoor;
 int stage;
 int timerStart;
 SoundFile vib;
+SoundFile crashSound;
 Phone phone;
 Start startscrn;
 Drive drivescrn;
@@ -33,6 +32,7 @@ void setup() {
   yCoor = height/2;
   phone = new Phone(350, 800);
   vib = new SoundFile(this, "vib.mp3");
+  crashSound = new SoundFile(this, "car.wav");
   startscrn = new Start();
   drivescrn = new Drive();
 }
