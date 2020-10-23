@@ -13,7 +13,6 @@ class Drive {
   float x;
   float y;
   Wheel wheel;
-  PImage background;
   Tree tree;
 
   Drive() {
@@ -22,7 +21,6 @@ class Drive {
     skyColor = color(42, 26, 71);
     roadColor = color(37, 37, 37);
     stripesColor = color(250, 250, 250);
-    background = loadImage("background.png");
     counter = 0;
     a = 2;
     lengt=3;
@@ -36,14 +34,15 @@ class Drive {
   void display() {
     noStroke();
     background(grassColor);
-
+    fill(skyColor);
     rectMode(CORNER);
-    image(background,0,0);
+    rect(0, 0, 1000, 300);
     fill(roadColor);
     quad(xCoor+275, yCoor, xCoor-275, yCoor, 
       xCoor-500, 2*(yCoor), xCoor+500, 2*(yCoor));
     fill(stripesColor);
     rect(x, y, widt, lengt);
+    tree.display();
     if (counter%2==0) {
       if (counter%8==0) {
         widt= widt +2;
@@ -61,7 +60,6 @@ class Drive {
       }
     }    
     counter++;
-    tree.display();
     fill(interiorColor);
     rect(0, 0, 1000, 20);
     quad(100, 20, 200, 450, 160, 450, -10, 20);
