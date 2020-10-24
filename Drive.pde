@@ -9,8 +9,8 @@ class Drive {
   PImage background;    //initiate images
   Tree tree;            //initiate objects
   Stripes stripe;
-  float xpand=237;
-  float ypand=496;
+  float xpand;
+  float ypand;
   Wheel wheel;
 
   Drive() {
@@ -22,6 +22,8 @@ class Drive {
     wheel = new Wheel();  //set objects
     tree = new Tree();
     stripe = new Stripes();
+    xpand=237;
+    ypand=496;
   }
 
   void display() {

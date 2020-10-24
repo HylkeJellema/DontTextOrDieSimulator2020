@@ -8,7 +8,6 @@
  */
 
 import processing.sound.*;
-import processing.video.*;
 
 boolean withText; //general boolean for text and drive
 boolean pressedMouse;
