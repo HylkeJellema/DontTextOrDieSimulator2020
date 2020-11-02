@@ -12,7 +12,7 @@ class Start {
     boxColor = color(255, 255, 255, 100);
   }
 
-  void display() {
+  void display(float xMouse, float yMouse, boolean pressedMouse) {
     background(backgroundColor);
     textSize(60);
     textAlign(CENTER);
