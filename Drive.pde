@@ -16,6 +16,8 @@ class Drive {
   Wheel wheel;
 
   Drive(float xMid, float yMid) {
+    xCoor= xMid;
+    yCoor= yMid;
     interiorColor = color(150, 75, 0);  //set colors
     grassColor = color(0, 60, 20);
     skyColor = color(42, 26, 71);
@@ -24,8 +26,6 @@ class Drive {
     wheel = new Wheel();  //set objects
     tree = new Tree(xCoor, yCoor);
     stripe = new Stripes(xCoor, yCoor);
-    xCoor= xMid;
-    yCoor= yMid;
     xPand=237;
     yPand=496;
   }
