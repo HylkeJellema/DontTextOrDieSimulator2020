@@ -9,8 +9,8 @@ class Drive {
   PImage background;    //initiate images
   Tree tree;            //initiate objects
   Stripes stripe;
-  float xpand;
-  float ypand;
+  float xPand;
+  float yPand;
   Wheel wheel;
 
   Drive() {
@@ -22,8 +22,8 @@ class Drive {
     wheel = new Wheel();  //set objects
     tree = new Tree();
     stripe = new Stripes();
-    xpand=237;
-    ypand=496;
+    xPand=237;
+    yPand=496;
   }
 
   void display() {
@@ -51,15 +51,15 @@ class Drive {
   }
   void dad() {
     if (showDad) {
-      xpand= xpand *1.03;
-      ypand= ypand  *1.03;
+      xPand= xPand *1.03;
+      yPand= yPand  *1.03;
       imageMode(CENTER);
-      image(dad, 525, 400, xpand, ypand);
+      image(dad, 525, 400, xPand, yPand);
       imageMode(CORNER);
       if (!crashSound.isPlaying()) {     //checks if sound is already playing
         crashSound.play();               //plays sound if not already
       }
-      if (xpand >1100) {
+      if (xPand >1100) {
         setStage(3);
       }
     }
