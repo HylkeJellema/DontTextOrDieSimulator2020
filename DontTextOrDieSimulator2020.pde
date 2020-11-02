@@ -33,7 +33,7 @@ void setup() {
   vib = new SoundFile(this, "vib.mp3");
   crashSound = new SoundFile(this, "car.mp3");
   dad = loadImage("dad.png");
-  startscrn = new Start();
+  startscrn = new Start(xMid, yMid);
   drivescrn = new Drive(xMid, yMid);
   endscrn = new endScreen();
 }

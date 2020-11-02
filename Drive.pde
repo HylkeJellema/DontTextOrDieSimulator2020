@@ -22,8 +22,8 @@ class Drive {
     roadColor = color(37, 37, 37);
     background = loadImage("background.png"); //set images
     wheel = new Wheel();  //set objects
-    tree = new Tree();
-    stripe = new Stripes();
+    tree = new Tree(xCoor, yCoor);
+    stripe = new Stripes(xCoor, yCoor);
     xCoor= xMid;
     yCoor= yMid;
     xPand=237;
@@ -38,8 +38,8 @@ class Drive {
     fill(roadColor);
     quad(xCoor+275, yCoor, xCoor-275, yCoor, //draw road
       xCoor-500, 2*(yCoor), xCoor+500, 2*(yCoor));
-    tree.display();                   //call object for moving trees
-    stripe.display();                 //call object for moving stripes
+    tree.display(xCoor, yCoor);                   //call object for moving trees
+    stripe.display(xCoor, yCoor);                 //call object for moving stripes
     dad();
     fill(interiorColor);
     rect(0, 0, 1000, 20);             //draw interior

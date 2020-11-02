@@ -12,8 +12,8 @@ class Tree {
   float xPos;  //initiate local coordinates
   float yPos;
 
-  Tree() {
-    leaveColor = color(0,51,0);    //set colors
+  Tree(float xCoor, float yCoor) {
+    leaveColor = color(0, 51, 0);    //set colors
     trunkColor = color(51, 25, 0);
     leaveHeight = 80;  //set height of leaves to 80
     leaveWidth = 40;   //set width of leaves to 40
@@ -24,7 +24,8 @@ class Tree {
     speedHori = 1;
   }
 
-  void display() {
+  void display(float xCoor, float yCoor) {
+    posMath(xCoor, yCoor);
     trunkWidth = leaveWidth/4;  //change width of tree trunk for width of leaves
     trunkHeight = leaveHeight/6;  //change height of tree trunk for height of leaves
     fill(leaveColor);
@@ -33,9 +34,12 @@ class Tree {
     rectMode(CENTER);  
     rect(xPos+(2*trunkWidth), yPos+(trunkHeight/2), trunkWidth, trunkHeight); //draw tree trunk
     rectMode(CORNER);
+
+  }
+  void posMath(float xCoor, float yCoor) {
     if (counter%2==0) {  //loop for changing coordinates and dimensions of the tree
-        leaveWidth= leaveWidth +4;  //increase width of leaves
-        xPos = xPos + 2*speedHori;  //increase x coordinates using horizontal speed
+      leaveWidth= leaveWidth +4;  //increase width of leaves
+      xPos = xPos + 2*speedHori;  //increase x coordinates using horizontal speed
       leaveHeight= leaveHeight+8;  //increase height of leaves
       speedVert = speedVert*1.1;  //increase vertical speed exponentially
       speedHori = speedHori*1.1;  //increase horizontal speed exponentially
@@ -46,16 +50,15 @@ class Tree {
         leaveHeight = 80; 
         speedVert = 1;
         rando = int(random(2)); //randomly assign 0 or 1 to rando
-        if(rando==0){ //if 0 draw tree right
+        if (rando==0) { //if 0 draw tree right
           xPos=xCoor+320;
           speedHori = 1; //horizontal speed positive to move right
-        }else if(rando==1){ //if 1 draw tree left
+        } else if (rando==1) { //if 1 draw tree left
           xPos=xCoor-330-leaveWidth;
           speedHori = -1; //horizontal speed negative to move left
         }
-        
       }
     }    
-    counter++;  //increase counter
+    counter++;  //increase counter}
   }
 }

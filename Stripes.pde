@@ -6,7 +6,7 @@ class Stripes {
   float xPos,yPos;  //initiate local coordinates
   color stripesColor; //initiate stripe color
 
-  Stripes() {
+  Stripes(float xCoor, float yCoor) {
     stripesColor = color(250, 250, 250); //set stripecolor
     counter = 0;  //give number variables initial values
     speed = 2;
@@ -16,7 +16,7 @@ class Stripes {
     yPos = yCoor;
   }
 
-  void display() {
+  void display(float xCoor, float yCoor) {
     fill(stripesColor);  
     rect(xPos, yPos, widt, lengt);//draw stripe
     if (counter%2==0) {     //loop for changing stripe coordinates and dimensions
