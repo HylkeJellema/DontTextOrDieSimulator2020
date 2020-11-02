@@ -11,8 +11,8 @@ import processing.sound.*;
 
 boolean withText; //general boolean for text and drive
 boolean pressedMouse;
-float xCoor;
-float yCoor;
+float xMid;
+float yMid;
 int stage;
 int timerStart;
 SoundFile vib;
@@ -27,14 +27,14 @@ void setup() {
   stage=1;
   withText = false;
   size(1000, 600);
-  xCoor = width/2;
-  yCoor = height/2;
+  xMid = width/2;
+  yMid = height/2;
   phone = new Phone(350, 800);
   vib = new SoundFile(this, "vib.mp3");
   crashSound = new SoundFile(this, "car.mp3");
   dad = loadImage("dad.png");
   startscrn = new Start();
-  drivescrn = new Drive();
+  drivescrn = new Drive(xMid, yMid);
   endscrn = new endScreen();
 }
 

@@ -9,11 +9,13 @@ class Drive {
   PImage background;    //initiate images
   Tree tree;            //initiate objects
   Stripes stripe;
-  float xPand;
+  float xCoor;
+  float yCoor;
   float yPand;
+  float xPand;
   Wheel wheel;
 
-  Drive() {
+  Drive(float xMid, float yMid) {
     interiorColor = color(150, 75, 0);  //set colors
     grassColor = color(0, 60, 20);
     skyColor = color(42, 26, 71);
@@ -22,6 +24,8 @@ class Drive {
     wheel = new Wheel();  //set objects
     tree = new Tree();
     stripe = new Stripes();
+    xCoor= xMid;
+    yCoor= yMid;
     xPand=237;
     yPand=496;
   }
