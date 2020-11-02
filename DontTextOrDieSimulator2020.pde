@@ -69,3 +69,7 @@ void keyPressed() { //to move the car left and right
 void keyReleased() { //reset direction boolean in drive class
   drivescrn.straight();
 }
+
+void setStage(int stage){
+  this.stage=stage;
+}

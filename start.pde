@@ -43,7 +43,7 @@ class Start {
       rect(xCoor, yCoor+15, 200, 330); //shows box above all text if mouse is above dont
       if (pressed) { //start stage 2 if clicked
         withText = false; 
-        stage = 2;
+        setStage(2);
         timerStart = millis();//create timestamd start stage 2
       }
     }
@@ -51,7 +51,7 @@ class Start {
       rect(xCoor, yCoor+60, 200, 250); //shows box above text and drive if mouse is above
       if (pressed) { //start stage 2 if clicked
         withText = true;
-        stage = 2;
+        setStage(2);
         timerStart = millis(); //creates timestamp start stage 2
       }
     }

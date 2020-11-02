@@ -60,7 +60,7 @@ class Drive {
         crashSound.play();               //plays sound if not already
       }
       if (xpand >1100) {
-        stage = 3;
+        setStage(3);
       }
     }
   }
