@@ -1,6 +1,6 @@
 class Phone {
 
-  float x, y; //used for location
+  float xPos, yPos; //used for location
   int counter, counter1, i; //counter for phone movement animaion, counter for ring animation, i for current frame phone
   boolean hansPhone;  //when true hans will call, else hylke
   boolean floatUp; //true alsong as phone has movement up
@@ -10,8 +10,8 @@ class Phone {
 
 
   Phone(float x, float y) { //contructor
-    this.x=x; //sets object x,y equal to given
-    this.y=y;
+    this.xPos=x; //sets object x,y equal to given
+    this.yPos=y;
     i=0;
     floatUp=true;
     for (int i=0; i<phoneHylke.length; i++) { //load 3 frames for both phones
@@ -32,9 +32,9 @@ class Phone {
       counter1++;
 
       if (hansPhone) { //depending which caller will choose correct image
-        image(phoneHans[i], x, y, 300, 600);
+        image(phoneHans[i], xPos, yPos, 300, 600);
       } else {
-        image(phoneHylke[i], x, y, 300, 600);
+        image(phoneHylke[i], xPos, yPos, 300, 600);
       }
       if (counter1%40==0) { //math behind animation. every 40 frames new iamge.
         if (i<2) {
@@ -44,12 +44,12 @@ class Phone {
         }
       }
     }
-    if (y==42) { //when phone is high enough it will stop floatup 
+    if (yPos==42) { //when phone is high enough it will stop floatup 
       floatUp=false;
       counter++;
     }
     if (floatUp) { //only when not at level will move phone up
-      y=y-2;
+      yPos=yPos-2;
     }
     if (counter==120) { //when counted to 120 frames phone will dissapear and dad will be spawned
       remove =true;
