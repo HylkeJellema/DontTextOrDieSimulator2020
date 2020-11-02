@@ -11,8 +11,6 @@ import processing.sound.*;
 
 boolean withText; //general boolean for text and drive
 boolean pressedMouse;
-float xMouse;
-float yMouse;
 float xCoor;
 float yCoor;
 int stage;
@@ -41,12 +39,9 @@ void setup() {
 }
 
 void draw() {
-  xMouse = mouseX;
-  yMouse = mouseY;  
-  pressedMouse = mousePressed;  //display function
 
   if (stage==1) { //start screen stage
-    startscrn.display();
+    startscrn.display(mouseX, mouseY, mousePressed);
   }
 
   if (stage==2) { //game stage
