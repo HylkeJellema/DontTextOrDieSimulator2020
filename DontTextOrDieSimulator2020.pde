@@ -65,6 +65,6 @@ void keyReleased() { //reset direction boolean in drive class
   drivescrn.straight();
 }
 
-void setStage(int stage){
+void setStage(int stage) {
   this.stage=stage;
 }
